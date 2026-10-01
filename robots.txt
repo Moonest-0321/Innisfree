@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moonest-0321.github.io/Innisfree/sitemap.xml
