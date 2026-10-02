@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#557078" stop-opacity=".07"/>
+      <stop offset=".75" stop-color="#aabbb0" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#c6c8ac" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#9aaba5" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#426269" stop-opacity=".03"/>
+    </linearGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#c9d0bc" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#c9d0bc" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lamplight">
+      <stop stop-color="#eac18f" stop-opacity=".63"/>
+      <stop offset=".28" stop-color="#cc986c" stop-opacity=".27"/>
+      <stop offset="1" stop-color="#cc986c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 從二樓亭內望出去：遠岸在雨雲下，湖面是主要的留白。 -->
+  <path d="M0 137h1200v553H0z" fill="url(#sky)"/>
+  <path d="M132 248c155-47 267-38 376-9 139 38 236 27 357-11 134-43 229-44 335-16" stroke="#a8bdb3" stroke-opacity=".12" stroke-width="2" stroke-linecap="round"/>
+  <path d="M199 278c111-9 186 4 266 20m340-18c132 21 236 7 354-18" stroke="#a8bdb3" stroke-opacity=".10" stroke-width="2" stroke-linecap="round"/>
+  <g stroke="#b6c8bf" stroke-opacity=".16" stroke-width="2" stroke-linecap="round">
+    <path d="m378 294-13 25m58-14-10 22m72-34-12 26m74-22-11 24m81-36-12 26m69-29-11 24m66-31-12 27"/>
+    <path d="m792 291-12 25m74-22-11 25m85-28-12 27m79-26-11 26"/>
+  </g>
+  <path d="M0 415c135-21 210-65 313-63 87 3 139 51 237 49 91-2 151-42 236-46 128-6 246 38 414 20v89H0z" fill="#78928d" fill-opacity=".09"/>
+  <!-- 對岸屋舍只剩低低的輪廓，讓讀者自己想像城市。 -->
+  <path d="M449 403h24l14-12 15 12h29m16 0h28l13-10 13 10h26m41 1h28l15-11 13 11h25" stroke="#c3b499" stroke-opacity=".19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M0 448c205-9 399-6 595 0 229 7 412-4 605-11v363H0z" fill="url(#lake)"/>
+  <path d="M33 461c143-8 271-4 373 3 203 12 355-7 531-8 98 0 172 2 263 8v61H0z" fill="url(#mist)"/>
+
+  <!-- 湖上畫舫都已回岸，只有這一艘小船帶走上一盞茶的餘溫。 -->
+  <path d="M628 482h158l-24 22H653l-25-22Z" fill="#31545a" fill-opacity=".69" stroke="#c09b78" stroke-opacity=".50" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M704 482v-44m0 3q34 8 51 41" stroke="#c9a47d" stroke-opacity=".41" stroke-width="2" stroke-linecap="round"/>
+  <path d="M607 513h202m-165 15h124m-94 14h77" stroke="#c8c6ad" stroke-opacity=".18" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 雨點碰水留下稀疏的同心波紋，景色正在慢慢停下來。 -->
+  <g stroke="#bdc9b8" stroke-opacity=".17" stroke-width="2">
+    <path d="M246 542c21-8 48-8 69 0m-83 11c29-13 68-13 97 0"/>
+    <path d="M838 540c18-7 42-7 60 0m-72 12c25-10 58-10 84 0"/>
+    <path d="M477 592c15-6 33-6 48 0m-58 10c22-9 46-9 68 0"/>
+  </g>
+  <path d="M83 574h297m108-5h91m280 4h260M150 615h179m436 4h315M336 661h224m171-3h167" stroke="#d4ba98" stroke-opacity=".12" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- 前景是二樓亭閣的屋簷、立柱與欄杆：它們只替「景」裝框。 -->
+  <path d="M0 68c177 15 345 16 525 9 264-10 449-2 675-15v52c-255 19-466 13-676 18-185 4-345 2-524-11V68Z" fill="#244548" fill-opacity=".70"/>
+  <path d="M0 121c180 13 340 15 524 11 210-5 421 1 676-18" stroke="#d1aa81" stroke-opacity=".55" stroke-width="4"/>
+  <path d="M74 125v604m1050-612v612" stroke="#b68f70" stroke-opacity=".51" stroke-width="10"/>
+  <path d="M92 157h1012" stroke="#d4af88" stroke-opacity=".23" stroke-width="3"/>
+  <path d="M90 571h1020l-19 18H109l-19-18Z" fill="#3f5c59" fill-opacity=".49" stroke="#c8a27d" stroke-opacity=".54" stroke-width="3"/>
+  <path d="M110 589v123m981-123v123M110 653h981" stroke="#c09c79" stroke-opacity=".45" stroke-width="3"/>
+  <path d="M234 589v64m124-64v64m124-64v64m124-64v64m124-64v64m124-64v64m124-64v64" stroke="#c09c79" stroke-opacity=".39" stroke-width="3"/>
+  <path d="M73 710h1052" stroke="#d0ad86" stroke-opacity=".36" stroke-width="4"/>
+
+  <!-- 一盞亭內的燈與桌角，說明觀景的人剛剛還在這裡。 -->
+  <circle cx="1003" cy="253" r="132" fill="url(#lamplight)"/>
+  <path d="M1003 135v55m-19 0h38l-5 66-14 11-14-11-5-66Z" fill="#bd895f" fill-opacity=".43" stroke="#edc291" stroke-opacity=".62" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M971 190h64m-32 75v20" stroke="#edc291" stroke-opacity=".53" stroke-width="2" stroke-linecap="round"/>
+  <path d="M894 727h306v22H889z" fill="#3b5958" fill-opacity=".49" stroke="#c69f78" stroke-opacity=".38" stroke-width="2"/>
+  <path d="M1025 718h47l7 9h-60l6-9Zm7-8h34m-17-8v8" stroke="#ddad82" stroke-opacity=".48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1038 694c-7-10 6-16-1-26m18 26c7-10-5-17 2-28" stroke="#c9d3c7" stroke-opacity=".24" stroke-width="2" stroke-linecap="round"/>
+</svg>
