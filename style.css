@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap');
 @font-face{font-family:ZhengfengLight;src:url('assets/fonts/jingting-zhengfeng-light.ttf') format('truetype');font-display:swap}
 :root{--paper:#16383d;--surface:#dce5e0;--ink:#c9956c;--muted:#a9bfbb;--line:#c9956c44;--serif:'Noto Serif TC','Songti TC',serif;--sans:'Noto Sans TC','PingFang TC',sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;background:var(--paper);color:var(--ink);font:16px var(--sans)}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:6px}button:hover,a:hover{color:#f2c59f}
@@ -157,3 +156,24 @@ a.pagelet-preview-card:hover,a.pagelet-preview-card:focus-visible{transform:tran
 .sailune-shot figcaption{padding:14px 20px 18px;font:400 12px/1.7 var(--sans);letter-spacing:.04em;color:#e8e1d5cc}
 @media(max-width:640px){.sailune-shot img{width:calc(100% - 28px);margin:14px 14px 0}.sailune-shot figcaption{padding:12px 14px 14px}}
 @media(prefers-reduced-motion:reduce){a.pagelet-preview-card{transition:none}}
+
+/* v1.2.1 細修：不改主題，只補可讀性、無障礙與載入 */
+.skip-link{position:absolute;left:16px;top:-60px;z-index:20;padding:10px 16px;background:#e8e1d5;color:#16383d;font-size:14px;transition:top .15s}
+.skip-link:focus{top:12px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h2.section-label{margin-top:0;font-family:var(--sans)}
+.hero h1 span{display:inline-block}
+.header nav a{position:relative;padding:6px 0;transition:color .2s}
+.header nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.header nav a:hover::after,.header nav a[aria-current="true"]::after{transform:scaleX(1)}
+.header nav a[aria-current="true"]{color:#f2c59f}
+.stories:has(.pagelet-poem){padding-bottom:84px}
+a.pagelet-preview-card:focus-visible{outline:2px solid #e8b58a;outline-offset:6px}
+.pagelet-open-link:hover span:first-child{transform:translate(2px,-2px)}
+.pagelet-open-link span{transition:transform .2s}
+p.sailune-download{margin-bottom:0;line-height:1.5}
+footer{flex-wrap:wrap}
+.footer-nav{display:flex;gap:clamp(18px,3vw,40px);font-size:13px;letter-spacing:.08em;color:#c9b8a4}
+.footer-meta{display:flex;align-items:center;gap:22px}
+@media(max-width:640px){.stories:has(.pagelet-poem){padding-bottom:56px}footer{display:grid;grid-template-columns:auto 1fr;row-gap:18px}.footer-nav{justify-content:flex-end;font-size:12px;gap:16px}.footer-meta{grid-column:1/-1;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}}
+@media(prefers-reduced-motion:reduce){.header nav a::after,.skip-link{transition:none}}

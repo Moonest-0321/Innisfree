@@ -45,3 +45,22 @@ navigationLinks.forEach((link) => {
     scrollAnimation = requestAnimationFrame(step);
   });
 });
+
+// 捲動時標示目前所在的區塊（aria-current），讓導覽知道讀者讀到哪裡。
+const sectionLinks = new Map();
+navigationLinks.forEach((link) => {
+  const target = document.getElementById(link.getAttribute('href').slice(1));
+  if (target) sectionLinks.set(target, link);
+});
+if ('IntersectionObserver' in window && sectionLinks.size) {
+  const visible = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => (entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target)));
+    const current = [...sectionLinks.keys()].find((section) => visible.has(section));
+    sectionLinks.forEach((link, section) => {
+      if (section === current) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sectionLinks.forEach((_, section) => observer.observe(section));
+}

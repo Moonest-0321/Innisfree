@@ -19,6 +19,7 @@
 
 ## 現況與待辦
 
+- 2026-11-01 細修（不改主題，頁尾版號仍為 v1.2，資產查詢參數改 1.2.1）：手機首屏題句改為在「張燈樓結綵／留風盼景停」之間換行；移除拾頁區下方空白佔位列與結尾空 span；頁首 Logo 改用縮小版 `assets/logo-jiangnan-wordmark-sm.png`（約 32 KB，原檔 957 KB 保留）；Google Fonts 改由 `<link>` 加 preconnect 載入，題句字體 preload；新增 Open Graph／Twitter 分享資訊與 `assets/og-image.jpg`（首屏畫面）、theme-color、Organization 結構化資料、sitemap lastmod；三個區塊標題改為 h2、加入「跳到主要內容」連結、外部連結標示另開新分頁、未開放的下載改為純文字；導覽加入目前區塊標示（aria-current＋底線）；頁尾加入關於景停／拾頁／帆夢連結。修改前快照存於 `versions/v1.2-before-polish/`。
 - 2026-11-01 內容遷移（待審，版號仍為 v1.2，未提交／推送）：拾頁精選作品預覽卡改放拾頁線上的〈孤鷹群舞〉（夢吟著）、簡介與楔子第一節〈雛兔〉開頭原句，卡片連到該書頁；帆夢示意畫面改用簡報素材中的實際寫作畫面 `assets/sailune-editor.jpg`（由 `.pitch-build/v3/assets/editor.png` 壓縮）。未採用：個人網站示範（不屬景停品牌）、簡報中的商業與試用計畫（提案性質）、AI 生成插圖、拾頁上的測試書目。帆夢下載仍標尚未開放。修改前快照存於 `versions/v1.2-before-content-migration/`。
 - 2026-10-02 使用者同意推送，目前的二樓亭內觀景背景、三區視覺線索、字體層級與首屏排版定案為 v1.2。
 - 2026-10-02 依使用者提出的新視角，首屏向量圖改成從二樓亭閣向外看：屋簷、兩側立柱與欄杆只作前景畫框，主畫面是雨雲下的湖、遠岸屋舍、小船與水面波紋；亭內保留一盞燈與石桌角。原雙層亭閣外觀試作存於 `versions/v1.1-before-pavilion-view/`。目前背景仍待審視，版號未提升。
