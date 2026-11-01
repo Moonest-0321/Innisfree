@@ -145,3 +145,15 @@ dialog{border:1px solid #c9956c88;width:min(570px,90vw);padding:48px;background:
 .hero-mark{display:none}
 .hero h1{color:#f1e9d9;text-shadow:0 2px 20px #092429aa}
 @media(max-width:640px){.hero::before{inset:2% -28% 25% 0;background-position:right center;opacity:.75;mask-image:linear-gradient(0deg,transparent 0%,#000 48%)}.hero::after{background:linear-gradient(0deg,#16383d 22%,transparent 82%)}.hero h1{text-shadow:0 2px 15px #092429cc}}
+
+/* 內容遷移：拾頁精選作品與帆夢實際畫面（待審，未提升版號） */
+a.pagelet-preview-card{display:block;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+a.pagelet-preview-card:hover,a.pagelet-preview-card:focus-visible{transform:translate(-2px,-2px);box-shadow:14px 14px 0 #152f3499}
+.pagelet-preview-card .pagelet-preview-summary{font-size:14px}
+.pagelet-preview-card blockquote{margin:20px 0 0;padding-left:16px;border-left:2px solid #c9956c;font:400 15px/1.9 var(--serif);color:#29474a}
+.pagelet-preview-source{display:block;margin-top:16px;font:400 11px var(--sans);letter-spacing:.08em;color:#61726d}
+.sailune-shot{margin:0;min-height:0}
+.sailune-shot img{display:block;width:calc(100% - 40px);height:auto;margin:20px 20px 0;border:1px solid #e8e1d533}
+.sailune-shot figcaption{padding:14px 20px 18px;font:400 12px/1.7 var(--sans);letter-spacing:.04em;color:#e8e1d5cc}
+@media(max-width:640px){.sailune-shot img{width:calc(100% - 28px);margin:14px 14px 0}.sailune-shot figcaption{padding:12px 14px 14px}}
+@media(prefers-reduced-motion:reduce){a.pagelet-preview-card{transition:none}}
