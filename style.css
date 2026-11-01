@@ -177,3 +177,71 @@ footer{flex-wrap:wrap}
 .footer-meta{display:flex;align-items:center;gap:22px}
 @media(max-width:640px){.stories:has(.pagelet-poem){padding-bottom:56px}footer{display:grid;grid-template-columns:auto 1fr;row-gap:18px}.footer-nav{justify-content:flex-end;font-size:12px;gap:16px}.footer-meta{grid-column:1/-1;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}}
 @media(prefers-reduced-motion:reduce){.header nav a::after,.skip-link{transition:none}}
+
+/* v1.2.2 動態與新區塊：延續湖光、紙紋、星帆的色域，只在不干擾閱讀時移動。 */
+.hero::before{background-image:url('assets/hero-landscape-motion.svg?v=1.2.2')}
+.hero::before{animation:hero-in 2.2s ease-out both}
+@keyframes hero-in{from{opacity:0;transform:scale(1.03)}to{opacity:.9;transform:none}}
+
+/* 題句：像墨暈開，逐字浮現 */
+.js .hero h1 .ch{display:inline-block;opacity:0;filter:blur(6px);transform:translateY(.25em);animation:ink-in 1.1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.5s + var(--i) * .11s)}
+@keyframes ink-in{to{opacity:1;filter:blur(0);transform:none}}
+.hero-foot{animation:fade-in 1s 2s ease-out both}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+.hero-scroll{position:absolute;right:8%;bottom:48px;display:flex;align-items:center;gap:12px;font:400 11px var(--sans);letter-spacing:.2em;color:var(--muted);writing-mode:vertical-rl;animation:fade-in 1s 2.4s ease-out both}
+.hero-scroll::after{content:"";width:1px;height:46px;background:linear-gradient(#c9956c,transparent);animation:drip 2.4s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-scroll:hover{color:#f2c59f}
+
+/* 捲動淡入 */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.is-visible{opacity:1;transform:none}
+.js .news-item.reveal:nth-child(2){transition-delay:.12s}.js .news-item.reveal:nth-child(3){transition-delay:.24s}
+.js .reveal-lines .line{display:inline-block;opacity:0;transform:translateX(-10px);transition:opacity .8s ease,transform .8s ease;transition-delay:calc(var(--i) * .16s)}
+.js .reveal-lines.is-visible .line{opacity:1;transform:none}
+.section-label::after{content:"";flex:0 0 0;height:1px;background:currentColor;opacity:.35;transition:flex-basis 1.2s ease .2s}
+.section-label.is-visible::after,.no-js .section-label::after{flex-basis:56px}
+
+/* 星帆輕輕閃爍、湖光漣漪緩慢擴散 */
+.sailune-section::after{animation:twinkle 4.5s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:1;transform:scale(1.25) rotate(20deg)}}
+.intro::before{animation:lake 14s ease-in-out infinite alternate}
+@keyframes lake{from{transform:scale(.96)}to{transform:scale(1.04)}}
+.sailune-shot img{transition:transform .5s ease}
+.sailune-shot:hover img{transform:scale(1.015)}
+
+/* 04 消息 */
+.news-section{background:#2b4547}
+.news-section .section-label span,.contact-section .section-label span{color:#d1aa84}
+.news-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:9%;align-items:start}
+.news-intro{margin:0;font:400 clamp(19px,1.7vw,24px)/1.9 var(--serif);letter-spacing:.04em;color:#e8e1d5}
+.news-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.news-item{display:grid;grid-template-columns:7.5em 1fr;column-gap:24px;row-gap:4px;padding:22px 0;border-bottom:1px solid var(--line)}
+.news-item time{grid-row:1/3;font:400 12px/2.2 var(--sans);letter-spacing:.08em;color:var(--muted)}
+.news-tag{justify-self:start;padding:1px 10px;border:1px solid #c9956c88;font:400 11px/1.8 var(--sans);letter-spacing:.1em;color:#d9b595}
+.news-item h3{grid-column:2;margin:6px 0 0;font:500 18px/1.6 var(--serif);letter-spacing:.04em;color:#e8e1d5}
+.news-item p{grid-column:2;margin:2px 0 0;font:400 14px/1.85 var(--serif);color:var(--muted)}
+
+/* 05 聯絡 */
+.contact-section{background:#213f44}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:start}
+.contact-lead{margin:0 0 18px;font:400 clamp(23px,2.5vw,34px)/1.65 var(--serif);letter-spacing:.06em;color:#e8e1d5}
+.contact-note{margin:0;max-width:26em;font:400 15px/1.9 var(--serif);color:#c4d0c9}
+.contact-list{margin:0;border-top:1px solid var(--line)}
+.contact-list>div{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid var(--line)}
+.contact-list dt{font:500 14px var(--sans);letter-spacing:.08em;color:#e8e1d5}
+.contact-list dd{margin:0;font:400 14px var(--sans);letter-spacing:.04em;color:var(--muted);text-align:right;overflow-wrap:anywhere}
+.contact-list a:hover{color:#f2c59f}
+
+/* 待提供的欄位：虛線提示，填入真實內容後移除 is-placeholder 即可 */
+.is-placeholder [data-field],.contact-list .is-placeholder dd{opacity:.62}
+.news-item.is-placeholder h3,.news-item.is-placeholder p,.contact-list .is-placeholder dd{border-bottom:1px dashed #c9956c66}
+.news-item.is-placeholder h3,.news-item.is-placeholder p{justify-self:start}
+
+@media(max-width:640px){.news-layout,.contact-layout{grid-template-columns:1fr;gap:28px}.news-item{grid-template-columns:1fr auto;row-gap:6px;align-items:center}.news-item time{grid-row:1;grid-column:1}.news-tag{grid-row:1;grid-column:2;justify-self:end}.news-item h3,.news-item p{grid-column:1/-1}.hero-scroll{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero::before{background-image:url('assets/hero-landscape.svg?v=1.2.2');animation:none}
+  .js .hero h1 .ch,.hero-foot,.hero-scroll,.hero-scroll::after,.sailune-section::after,.intro::before{animation:none;opacity:1;filter:none;transform:none}
+  .js .reveal,.js .reveal-lines .line{opacity:1;transform:none;transition:none}
+}

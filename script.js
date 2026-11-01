@@ -64,3 +64,33 @@ if ('IntersectionObserver' in window && sectionLinks.size) {
   }, { rootMargin: '-40% 0px -55% 0px' });
   sectionLinks.forEach((_, section) => observer.observe(section));
 }
+
+// 題句逐字浮現：保留原文給搜尋引擎與螢幕閱讀器，視覺上拆成單字。
+const heroTitle = document.querySelector('.hero h1');
+if (heroTitle && !reduceMotion.matches) {
+  heroTitle.setAttribute('aria-label', heroTitle.textContent.replace(/\s+/g, ' ').trim());
+  let index = 0;
+  heroTitle.querySelectorAll('span').forEach((phrase) => {
+    phrase.setAttribute('aria-hidden', 'true');
+    phrase.innerHTML = [...phrase.textContent].map((ch) => `<span class="ch" style="--i:${index++}">${ch}</span>`).join('');
+    index += 2;
+  });
+}
+
+// 捲動到時淡入；短詩一行一行出現。
+document.querySelectorAll('.reveal-lines').forEach((poem) => {
+  poem.querySelectorAll('.line').forEach((line, i) => line.style.setProperty('--i', i));
+});
+const revealTargets = document.querySelectorAll('.reveal, .reveal-lines, .section-label');
+if ('IntersectionObserver' in window && !reduceMotion.matches) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  revealTargets.forEach((el) => revealObserver.observe(el));
+} else {
+  revealTargets.forEach((el) => el.classList.add('is-visible'));
+}
