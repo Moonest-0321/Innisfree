@@ -19,6 +19,7 @@
 
 ## 現況與待辦
 
+- 2026-11-02 內容補齊（主題不變；頁尾版號仍 v1.2，資產參數 1.2.3）：首屏加一句定位與「到拾頁讀故事／認識帆夢」兩個入口；關於景停在故事前加入品牌說明、帆夢→拾頁→讀者流程圖與品牌資料列（主理人／團隊、成立為待提供，所在臺灣）；拾頁加入平台定位、功能標籤與「讀者互動規劃中」；帆夢加入定位標、六項功能（依 Sailune feature-inventory 與 Pagelet roadmap）與平台／狀態／系統需求（待提供）／方案與價格（待公布）；新增 GitHub Pages 用 `404.html`。修改前快照存於 `versions/v1.2-before-completion/`。
 - 2026-11-01 動態與新區塊（頁尾版號仍為 v1.2，資產參數 1.2.2）：首屏改用 `assets/hero-landscape-motion.svg`（燈光明滅、燈籠輕擺、雨絲、小船起伏、波紋擴散、霧氣、茶煙），原靜態 `hero-landscape.svg` 保留給「減少動態效果」設定；題句逐字墨暈浮現、首屏右下「往下」提示；區塊標題、故事、短詩（逐行）、作品卡與帆夢區捲動淡入；新增「04 消息」「05 聯絡」區塊與導覽／頁尾項目。消息三則、電子郵件、Instagram、Threads 為虛線標示的待提供欄位（`is-placeholder` 與 `data-field`），填入真實內容後移除 `is-placeholder` 即可。修改前快照存於 `versions/v1.2-before-motion/`。
 - 2026-11-01 細修（不改主題，頁尾版號仍為 v1.2，資產查詢參數改 1.2.1）：手機首屏題句改為在「張燈樓結綵／留風盼景停」之間換行；移除拾頁區下方空白佔位列與結尾空 span；頁首 Logo 改用縮小版 `assets/logo-jiangnan-wordmark-sm.png`（約 32 KB，原檔 957 KB 保留）；Google Fonts 改由 `<link>` 加 preconnect 載入，題句字體 preload；新增 Open Graph／Twitter 分享資訊與 `assets/og-image.jpg`（首屏畫面）、theme-color、Organization 結構化資料、sitemap lastmod；三個區塊標題改為 h2、加入「跳到主要內容」連結、外部連結標示另開新分頁、未開放的下載改為純文字；導覽加入目前區塊標示（aria-current＋底線）；頁尾加入關於景停／拾頁／帆夢連結。修改前快照存於 `versions/v1.2-before-polish/`。
 - 2026-11-01 內容遷移（待審，版號仍為 v1.2，未提交／推送）：拾頁精選作品預覽卡改放拾頁線上的〈孤鷹群舞〉（夢吟著）、簡介與楔子第一節〈雛兔〉開頭原句，卡片連到該書頁；帆夢示意畫面改用簡報素材中的實際寫作畫面 `assets/sailune-editor.jpg`（由 `.pitch-build/v3/assets/editor.png` 壓縮）。未採用：個人網站示範（不屬景停品牌）、簡報中的商業與試用計畫（提案性質）、AI 生成插圖、拾頁上的測試書目。帆夢下載仍標尚未開放。修改前快照存於 `versions/v1.2-before-content-migration/`。
