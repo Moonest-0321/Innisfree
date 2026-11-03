@@ -305,3 +305,12 @@ footer{flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){.hero-intro{animation:none}.brand-flow li>a,.hero-cta{transition:none}}
 .stories-layout{align-items:start}.pagelet-preview-card{flex:none}
+
+/* v1.2.4 取消開場動畫；待提供文案的統一樣式 */
+.hero::before,.hero-foot,.hero-intro,.hero-scroll{animation:none!important}
+.hero::before{opacity:.9}
+.js .hero h1 .ch{animation:none;opacity:1;filter:none;transform:none}
+.hero-scroll{gap:0}
+.ph{display:inline;opacity:.6;border-bottom:1px dashed #c9956c88;font-style:normal}
+.pagelet-preview-card .ph,.chip-list .ph{border-bottom:0}
+.flow-step span:empty{display:none}
